@@ -13,26 +13,107 @@
   }
 }
 
-.App-header {
+.App{
   background-color: #282c34;
   min-height: 100vh;
+  padding-top:40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  font-size:1em;
   color: white;
 }
-
+h1{
+  margin-bottom:10px;
+  cursor: pointer;
+}
+h1:hover{
+  color:#61dafb;
+}
 .App-link {
   color: #61dafb;
 }
+.name-user{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:90vw;
+  max-width:450px;
+  padding:10px 3px;
+}
+.name-user input{
+  padding:7px;
+  color:white;
+  outline:none;
+  border-radius:3px;
+  border-top-right-radius:0;
+  border-bottom-right-radius: 0;
+  font-size:18px;
+  border:0.5px solid #61dafb;
+  background-color:transparent;
+}
+.name-user input::-webkit-input-placeholder{
+  color:rgba(255, 255, 255, 0.7)
+}
+.name-user input::-moz-placeholder{
+  color:rgba(255, 255, 255, 0.7)
+}
+.name-user button{
+  display:block;
+  padding:7px;
+  border:1px solid #61dafb;
+  border-top-right-radius:4px;
+  border-bottom-right-radius:4px;
+  background-color:#61dafb;
+  transition:300ms ease-in;
+  cursor:pointer;
+  position: relative;
+  overflow:hidden;
+}
+@media(max-width:400px) {
+  .name-user{
+    flex-direction:column;
+  }
+  .name-user input{
+    width:100%;
+    border-radius:none;
+    margin-bottom:10px;
+  }
+  .name-user button{
+    width:100%;
+    border-radius:none;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.name-user button::before{
+  position: absolute;
+  top:0;
+  left:200%;
+  content:" ";
+  width:100%;
+  height:100%;
+  background-color:#282c34;
+  transition:300ms all ease;
+  z-index:4;
+}
+.name-user button span{
+  color:#282c34;
+  font-size:18px;
+  font-weight:bold;
+  position:relative;
+  z-index:5;
+}
+.name-user button:hover::before{
+ left:0%;
+}
+.name-user button:hover span{
+  color:#61dafb;
+}
+.notify{
+  position:fixed;
+  top:20px;
+  left:10px;
+  transform:translateX(-500%);
+  transition:200ms ease-in-out;
 }
